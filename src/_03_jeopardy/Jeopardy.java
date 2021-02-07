@@ -34,7 +34,7 @@ import javax.swing.JPanel;
 public class Jeopardy implements ActionListener {
 	private JButton firstButton;
 	private JButton secondButton;
-	private JButton thirdButton, fourthButton;
+	private JButton thirdButton, fourthButton, fifthButton;
 	private JPanel quizPanel;
 	private int score = 0;
 	private JLabel scoreBox = new JLabel("0");
@@ -59,7 +59,7 @@ public class Jeopardy implements ActionListener {
 		// 5. Add the quizPanel to the frame
 		frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-		firstButton = createButton("$100");
+		firstButton = createButton("$200");
 		// 7. Add the firstButton to the quizPanel
 		quizPanel.add(firstButton);
 		// 8. Write the code to complete the createButton() method below. Check that your
@@ -67,12 +67,20 @@ public class Jeopardy implements ActionListener {
 
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-		secondButton = createButton("$200");
+		secondButton = createButton("$400");
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
+		
+		thirdButton = createButton("$600");
+		fourthButton = createButton("$800");
+		fifthButton = createButton("$1000");
 		// 11. Add action listeners to the buttons (2 lines of code)
 		firstButton.addActionListener(this);
 		secondButton.addActionListener(this);
+		thirdButton.addActionListener(this);
+		fourthButton.addActionListener(this);
+		fifthButton.addActionListener(this);
+
 		// 12. Write the code to complete the actionPerformed() method below
 		
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
@@ -93,14 +101,14 @@ public class Jeopardy implements ActionListener {
 	private JButton createButton(String dollarAmount) {
 		
 		// Create a new JButton
-
+		JButton button = new JButton();
 		// Set the text of the button to the dollarAmount
-
+		button.setText(dollarAmount);
 		// Increment the buttonCount (this should make the layout vertical)
-
+		buttonCount += 1;
 		// Return your new button instead of the temporary button
-
-		return new JButton("temporary button");
+		
+		return button;
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -113,7 +121,23 @@ public class Jeopardy implements ActionListener {
 		
 			// Call the askQuestion() method
 		if(buttonPressed == firstButton) {
-			askQuestion("Which animal does the meat from the inside of burger come from?", "Cow", 100);
+			askQuestion("Which animal does the meat from the inside of a burger come from?", "Cow", 200);
+		}
+		
+		if(buttonPressed == secondButton) {
+			askQuestion("Which animal does the meat from the inside of a chicken nugget come from?", "Chicken", 400);
+		}
+		
+		if(buttonPressed == thirdButton) {
+			askQuestion("What can vegeetarians NOT eat?", "Meat", 600);
+		}
+		
+		if(buttonPressed == fourthButton) {
+			askQuestion("Which kind of meat can a peskitarian eat?", "Fish", 800);
+		}
+		
+		if(buttonPressed == fifthButton) {
+			askQuestion("Is tofu a meat?", "no", 1000);
 		}
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
 
@@ -136,6 +160,7 @@ public class Jeopardy implements ActionListener {
 		// If the answer is correct
 		if(answer.equals (correctAnswer)) {
 			score += prizeMoney;
+			JOptionPane.showMessageDialog(null, "You were correct");
 		}
 			// Increase the score by the prizeMoney
 
@@ -144,7 +169,10 @@ public class Jeopardy implements ActionListener {
 		// Otherwise
 
 			// Decrement the score by the prizeMoney
-
+		else {
+			score -= prizeMoney;
+			JOptionPane.showMessageDialog(null, "You were wrong, the correct answer was "+ correctAnswer);
+		}
 			// Pop up a message to tell the user they were wrong and give them the correct answer
 
 		// Call the updateScore() method
