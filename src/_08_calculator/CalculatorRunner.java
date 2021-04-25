@@ -5,10 +5,9 @@ import javax.swing.SwingUtilities;
 
 public class CalculatorRunner {
 public static void main(String[] args) {
-	SwingUtilities.invokeLater(new Calculator());
- 	 begin();
+	Calculator calculator = new Calculator();
+ 	calculator.makeButtons();
 }
-static void begin() {
-	
+
 }
-}
+    
