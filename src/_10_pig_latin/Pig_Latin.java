@@ -1,9 +1,35 @@
 package _10_pig_latin;
 
-public class Pig_Latin {
+import java.awt.Button;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Pig_Latin implements ActionListener {
+	
+	void makeButtons(){
+		
+	JPanel panel = new JPanel();
+	button.addActionListener(this);
+	panel.add(button);
+	panel.add(textfield);
+	panel.add(textfield2);
+	frame.add(panel);
+	frame.pack();
+	frame.setVisible(true);
+	}
 	
 	JFrame frame = new JFrame();
-	JPanel panel = new JPanel
+	
+	Button button = new Button("translate");
+	
+	JTextField textfield = new JTextField(20);
+	
+	JTextField textfield2 = new JTextField(20);
+	
 
 
 		/**
@@ -26,7 +52,7 @@ public class Pig_Latin {
 		}
 			
 		/**
-		* Method to translate a sentence word by word.
+		* Method to translate a sentence word by word.  
 		* @param s The sentence in English
 		* @return The pig latin version
 		*/
@@ -65,6 +91,12 @@ public class Pig_Latin {
 		word.charAt(i)=='u')
 		return i;
 		return 0;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			
 		}
 	
 }
