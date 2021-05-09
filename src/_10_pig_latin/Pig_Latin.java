@@ -95,8 +95,10 @@ public class Pig_Latin implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			String answer = textfield.getText();
+			String answer1 = translate(answer);
+			textfield2.setText(answer1);
 			
-			
-		}
-	
+		
+}
 }

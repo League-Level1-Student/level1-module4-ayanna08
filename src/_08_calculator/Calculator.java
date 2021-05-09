@@ -74,7 +74,7 @@ public class Calculator implements Runnable, ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 		String num1 = textfield.getText();
 		int numb1 = Integer.parseInt(num1);
-		
+	
 		String num2 = textfield2.getText();
 		int numb2 = Integer.parseInt(num2);
 		
