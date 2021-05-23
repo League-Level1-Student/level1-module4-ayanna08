@@ -55,6 +55,16 @@ public class WhackAMole implements ActionListener {
 			buttonpressed += 1;
 		}
 		
+		else {
+			molemissed = molemissed + 1;
+			JOptionPane.showMessageDialog(null, "MISSED");
+			if(molemissed == 5) {
+				JOptionPane.showMessageDialog(null, "GAME OVER");
+				System.exit(0);
+			}
+			
+		}
+		
 		if(buttonpressed == 10) {
 			endGame(timeAtStart, buttonpressed);
 		}
