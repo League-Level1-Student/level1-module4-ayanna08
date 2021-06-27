@@ -75,10 +75,12 @@ public class Slot_Machine {
 			label1 = createLabelImage("lime.jpg");
 			label2 = createLabelImage("orange.jpg");
 			
-			panel.add(label0);
+			//panel.add(label0);
 			panel.add(label1);
 			panel.add(label2);
 			frame.add(panel);
+			frame.pack();
+			frame.setVisible(true);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
