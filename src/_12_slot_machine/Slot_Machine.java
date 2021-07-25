@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Slot_Machine implements ActionListener {  
@@ -78,7 +79,7 @@ public class Slot_Machine implements ActionListener {
 	label2 = createLabelImage("CHERRY.png");
 	}
 	
-	if(numb == 1) {
+	if(num == 1) {
 	label2 = createLabelImage("LIME.png");
 	}
 	
@@ -86,9 +87,13 @@ public class Slot_Machine implements ActionListener {
 	label2 = createLabelImage("ORANGE.png");
 	}
 	
+	if(number == numb && numb == num) {
+		JOptionPane.showMessageDialog(null, "YOU WIN");
 	}
+}
 	catch(Exception e) {
 		e.printStackTrace();
+	
 	}
 	}
 	
@@ -115,12 +120,14 @@ public class Slot_Machine implements ActionListener {
 		 * 2.) Call picture
 		 * 3.) Add all the labels and button back to the new JPanel
 		 */
-		JPanel panel1 = new JPanel();
+		JPanel panel = new JPanel();
 		picture();
-		panel1.add(label0);
-		panel1.add(label1);
-		panel1.add(label2);
-		panel1.add(button);
+		panel.add(label0);
+		panel.add(label1);
+		panel.add(label2);
+		panel.add(button);
+		frame.add(panel);
+		frame.pack();
 		
 	}
     
